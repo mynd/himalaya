@@ -14,25 +14,25 @@ test('stringify() should handle simple conversions', t => {
 })
 
 test('stringify() should work for void elements', t => {
-  const meta = "<meta charset='utf8'>"
+  const meta = '<meta charset="utf8">'
   t.is(stringify(parse(meta)), meta)
 
-  const link = "<link rel='stylesheet' href='file.css'>"
+  const link = '<link rel="stylesheet" href="file.css">'
   t.is(stringify(parse(link)), link)
 })
 
 test('stringify() should build the class attribute properly', t => {
-  const elem = "<div class='foo bar baz'></div>"
+  const elem = '<div class="foo bar baz"></div>'
   t.is(stringify(parse(elem)), elem)
 })
 
 test('stringify() should build data-* attributes properly', t => {
-  const elem = "<div data-one='5' data-two='five'></div>"
+  const elem = '<div data-one="5" data-two="five"></div>'
   t.is(stringify(parse(elem)), elem)
 })
 
 test('stringify() should build the style attribute properly', t => {
-  const elem = "<div style='color: #fff; font-size: 12px'></div>"
+  const elem = '<div style="color: #fff; font-size: 12px"></div>'
   t.is(stringify(parse(elem)), elem)
 })
 
@@ -59,5 +59,5 @@ test('formatAttributes should stringify attribute lists correctly', t => {
   t.is(formatAttributes([{
     key: 'data-key',
     value: '123'
-  }]), " data-key='123'")
+  }]), ' data-key="123"')
 })
