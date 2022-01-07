@@ -24,7 +24,8 @@ export function toHTML (tree, options) {
     const isSelfClosing = arrayIncludes(options.voidTags, tagName.toLowerCase())
     return isSelfClosing
       ? `<${tagName}${formatAttributes(attributes)}>`
-      : `<${tagName}${formatAttributes(attributes)}>${toHTML(children, options)}</${tagName}>`
+      : children.length ? `<${tagName}${formatAttributes(attributes)}>${toHTML(children, options)}</${tagName}>`
+        : `<${tagName}${formatAttributes(attributes)} />`
   }).join('')
 }
 

@@ -22,22 +22,22 @@ test('stringify() should work for void elements', t => {
 })
 
 test('stringify() should build the class attribute properly', t => {
-  const elem = '<div class="foo bar baz"></div>'
+  const elem = '<div class="foo bar baz" />'
   t.is(stringify(parse(elem)), elem)
 })
 
 test('stringify() should build data-* attributes properly', t => {
-  const elem = '<div data-one="5" data-two="five"></div>'
+  const elem = '<div data-one="5" data-two="five" />'
   t.is(stringify(parse(elem)), elem)
 })
 
 test('stringify() should build the style attribute properly', t => {
-  const elem = '<div style="color: #fff; font-size: 12px"></div>'
+  const elem = '<div style="color: #fff; font-size: 12px" />'
   t.is(stringify(parse(elem)), elem)
 })
 
 test('stringify() should do basic escaping if a value contains either single or double quotes', t => {
-  const html = '<div data-val="cake is \'good\'"></div>'
+  const html = '<div data-val="cake is \'good\'" />'
   t.is(stringify(parse(html)), html)
 })
 
